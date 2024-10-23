@@ -62,7 +62,7 @@ eunit:
 	rebar3 as prod tar;
 	rm -rf tar_dir;
 	mkdir tar_dir;
-	cp _bulid/prod/rel/add_test
+	cp _build/prod/rel/add_test/*.tar.gz tar_dir/add_test.tar.gz;
 	#INFO: Starts the eunit testing .................
 	erl -pa test_ebin\
 	 -pa _build/default/lib/log/ebin\

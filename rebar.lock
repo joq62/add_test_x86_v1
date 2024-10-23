@@ -1,6 +1,6 @@
 [{<<"add_test">>,
   {git,"https://github.com/joq62/add_test.git",
-       {ref,"07ede2f816e4464c73940ccce6b131152c5e3fe9"}},
+       {ref,"c12912eb4f98d0250880dea0080709e3bebcb380"}},
   0},
  {<<"common">>,
   {git,"https://github.com/joq62/common.git",
