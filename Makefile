@@ -12,7 +12,12 @@ all:
 	#INFO: Compile application
 	rm -rf common_include;
 	cp -r ~/erlang/common_include .
-	rebar3 compile;
+	rebar3 release;
+	rebar3 as prod tar;
+	rm -rf tar_dir;
+	mkdir tar_dir;
+	cp _build/prod/rel/add_test/*.tar.gz tar_dir/add_test.tar.gz;
+	rm -rf _build;
 	git status
 	echo Ok there you go!
 	#INFO: no_ebin_commit ENDED SUCCESSFUL
@@ -53,7 +58,11 @@ eunit:
 	cp test_config/test.rebar.config rebar.config;
 	erlc -o test_ebin test/*.erl;
 	cp test/*.app test_ebin;
-	rebar3 compile
+	rebar3 release;
+	rebar3 as prod tar;
+	rm -rf tar_dir;
+	mkdir tar_dir;
+	cp _bulid/prod/rel/add_test
 	#INFO: Starts the eunit testing .................
 	erl -pa test_ebin\
 	 -pa _build/default/lib/log/ebin\
